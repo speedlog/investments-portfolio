@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Wallet</title>
+    <link href="style.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+    <script src="jquery.inputmask.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".numeric").inputmask({
+                alias: 'decimal',
+                allowMinus: false,
+                rightAlign: false
+            });
+
+        })
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-success" role="alert" th:if="${success}">
+                Added to wallet
+            </div>
+            <div class="alert alert-danger" role="alert" th:if="${error != null}" th:text="${error}"></div>
+            <h1>Add to wallet</h1>
+            <a href="/" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Return</a>
+            <form action="#" th:action="@{/add}" th:object="${addToWallet}" method="post">
+                <div class="mb-3">
+                    <label class="col-4">Operation</label>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input name="operation" id="operation_purchase" type="radio" required="required"
+                               class="custom-control-input" value="PURCHASE" th:field="*{operation}">
+                        <label for="operation_purchase" class="custom-control-label">Purchase</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input name="operation" id="operation_disposal" type="radio" required="required"
+                               class="custom-control-input" value="DISPOSAL" th:field="*{operation}">
+                        <label for="operation_disposal" class="custom-control-label">Disposal</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="col-4 col-form-label">Date</label>
+                    <input id="date" name="date" type="date" class="form-control" required="required" th:field="*{date}">
+                </div>
+                <div class="mb-3">
+                    <label for="number-of-units" class="col-4 col-form-label">Units</label>
+                    <input id="number-of-units" name="number-of-units" placeholder="0.00" type="text" required="required"
+                           class="form-control numeric" th:field="*{numberOfUnits}">
+                </div>
+                <div class="mb-3">
+                    <label for="price-per-unit" class="col-4 col-form-label">Price per unit</label>
+                    <input id="price-per-unit" name="price-per-unit" placeholder="0.00"  type="text" required="required"
+                           class="form-control numeric" th:field="*{pricePerUnit}">
+                </div>
+                <div class="mb-3">
+                    <label for="commision" class="col-4 col-form-label">Commision</label>
+                    <input id="commision" name="commision" placeholder="0.00" type="text"
+                           class="form-control numeric" th:field="*{commision}">
+                </div>
+                <div class="mb-3">
+                    <a href="/" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Return</a>
+                    <button name="submit" type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
