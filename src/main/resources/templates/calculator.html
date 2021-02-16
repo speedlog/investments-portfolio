@@ -55,6 +55,71 @@
                 </tr>
                 </tbody>
             </table>
+
+            <h2>Sold summary</h2>
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td>Units</td>
+                        <td><span th:text="${soldSummary.getUnits()}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Commision</td>
+                        <td><span th:text="${soldSummary.getCommision()}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Profit/Loss</td>
+                        <td th:class="${soldSummary.getProfitLoss() > 0 ? 'profit' : 'loss'}"><span th:text="${soldSummary.getProfitLoss()}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Profit/Loss percentage</td>
+                        <td th:class="${soldSummary.getProfitLossPercentage() > 0 ? 'profit' : 'loss'}"><span th:text="${soldSummary.getProfitLossPercentage()}"></span> %</td>
+                    </tr>
+                    <tr>
+                        <td>Profit/Loss per year</td>
+                        <td th:class="${soldSummary.getProfitLossPerYear() > 0 ? 'profit' : 'loss'}"><span th:text="${soldSummary.getProfitLossPerYear()}"></span> %</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Unold summary</h2>
+            <table class="table table-hover">
+                <tbody>
+                <tr>
+                    <td>Payment</td>
+                    <td><span th:text="${unsoldSummary.getPayment()}"></span></td>
+                </tr>
+                <tr>
+                    <td>Units</td>
+                    <td><span th:text="${unsoldSummary.getUnits()}"></span></td>
+                </tr>
+                <tr>
+                    <td>Today price</td>
+                    <td><span th:text="${unsoldSummary.getTodayPrice()}"></span></td>
+                </tr>
+                <tr>
+                    <td>Average price</td>
+                    <td><span th:text="${unsoldSummary.getAveragePriceUnit()}"></span></td>
+                </tr>
+                <tr>
+                    <td>Commision</td>
+                    <td><span th:text="${unsoldSummary.getCommision()}"></span></td>
+                </tr>
+                <tr>
+                    <td>Profit/Loss</td>
+                    <td th:class="${unsoldSummary.getProfitLoss() > 0 ? 'profit' : 'loss'}"><span th:text="${unsoldSummary.getProfitLoss()}"></span></td>
+                </tr>
+                <tr>
+                    <td>Profit/Loss percentage</td>
+                    <td th:class="${unsoldSummary.getProfitLossPercentage() > 0 ? 'profit' : 'loss'}"><span th:text="${unsoldSummary.getProfitLossPercentage()}"></span> %</td>
+                </tr>
+                <tr>
+                    <td>Profit/Loss per year</td>
+                    <td th:class="${unsoldSummary.getProfitLossPerYear() > 0 ? 'profit' : 'loss'}"><span th:text="${unsoldSummary.getProfitLossPerYear()}"></span> %</td>
+                </tr>
+                </tbody>
+            </table>
+
             <a href="/" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Return</a>
         </div>
     </div>

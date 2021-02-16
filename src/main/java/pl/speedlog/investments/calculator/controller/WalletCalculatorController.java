@@ -43,6 +43,8 @@ public class WalletCalculatorController {
         records.sort(Comparator.comparing(CalculatorResultRecord::getPurchaseDate));
 
         model.addAttribute("records", records);
+        model.addAttribute("soldSummary", new SoldSummaryDTO(calculatorResult.getSoldSummary()));
+        model.addAttribute("unsoldSummary", new UnsoldSummaryDTO(calculatorResult.getUnsoldSummary()));
         return "calculator";
     }
 

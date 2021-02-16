@@ -83,4 +83,12 @@ public class UnsoldWalletRecord implements WalletRecordInfo {
         double yearPercentage = 365 / daysBetweenPurchaseAndDisposal;
         return BigDecimalHelper.stripZeros(getProfitLossPercentage().multiply(BigDecimal.valueOf(yearPercentage)).divide(BigDecimal.valueOf(100L), MathContext.DECIMAL128));
     }
+
+    public BigDecimal getPurchaseUnitPrice() {
+        return purchase.getUnitPrice();
+    }
+
+    public BigDecimal getDisposalUnitPrice() {
+        return hipoteticalDisposal.getUnitPrice();
+    }
 }

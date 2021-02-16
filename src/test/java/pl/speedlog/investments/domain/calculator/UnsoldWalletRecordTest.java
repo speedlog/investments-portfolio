@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * @author <a href="mailto:mariusz.wyszomierski@coi.gov.pl">mariusz.wyszomierski@coi.gov.pl</a>
+ * @author <a href="mailto:mariusz@wyszomierski.pl">mariusz@wyszomierski.pl</a>
  */
 class UnsoldWalletRecordTest {
 

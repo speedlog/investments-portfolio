@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * @author <a href="mailto:mariusz.wyszomierski@coi.gov.pl">mariusz.wyszomierski@coi.gov.pl</a>
+ * @author <a href="mailto:mariusz@wyszomierski.pl">mariusz@wyszomierski.pl</a>
  */
 public class BigDecimalHelper {
 

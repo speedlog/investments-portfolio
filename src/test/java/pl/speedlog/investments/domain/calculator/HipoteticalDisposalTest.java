@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * @author <a href="mailto:mariusz.wyszomierski@coi.gov.pl">mariusz.wyszomierski@coi.gov.pl</a>
+ * @author <a href="mailto:mariusz@wyszomierski.pl">mariusz@wyszomierski.pl</a>
  */
 class HipoteticalDisposalTest {
 
